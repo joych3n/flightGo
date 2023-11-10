@@ -23,7 +23,7 @@ func (this *Server) Handle(conn net.Conn){
 func (this *Server) Start() {
 	// socket listen
   listener,_ :=	net.Listen("tcp",fmt.Sprintf("%s:%d",this.Ip,this.Port))
-	defer listener.close();
+	// defer listener.close();
 	for{
 		conn,_ := listener.Accept();
 		go this.Handle(conn)
